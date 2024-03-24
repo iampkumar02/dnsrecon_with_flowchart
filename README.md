@@ -16,3 +16,13 @@ This script provides the ability to perform:
 
 # Python Version
 DNSRecon requires python3.6+
+
+# Flow Chart
+```mermaid
+flowchart TD
+    A[Start] --> B{Is it?}
+    B -->|Yes| C[OK]
+    C --> D[Rethink]
+    D --> B
+    B ---->|No| E[End]
+```
