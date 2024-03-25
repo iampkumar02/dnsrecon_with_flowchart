@@ -19,10 +19,22 @@ DNSRecon requires python3.6+
 
 # Flow Chart
 ```mermaid
-flowchart TD
-    A[Start] --> B{Is it?}
-    B -->|Yes| C[OK]
-    C --> D[Rethink]
-    D --> B
-    B ---->|No| E[End]
+graph TD;
+    A[dnsrecon.py] -->|-d| B[Target Domain]
+    B -->|-j| C[json file]
+    C --> D[Save results in Json file]
+    
+    B -->|-o| E[output file]
+    E -->|-w| F[wordlist]
+    F --> G[Save results in output file]
+    
+    B --> H[Enumerate and Run a scan]
+    
+    B --> |-a/-t axfr|I[Zone Transfer]
+    
+    B --> |-a --db|J[dnsrecon-db/xml]
+    J --> K[Saved dnsrecon-db/xml file]
+    
+    A --> |-d|X[Target IP]
+    X --> Y["DNS (reverse lookups) Brute force subdomains"]
 ```
