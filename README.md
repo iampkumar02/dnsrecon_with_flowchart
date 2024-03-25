@@ -37,4 +37,25 @@ graph TD;
     
     A --> |-d|X[Target IP]
     X --> Y["DNS (reverse lookups) Brute force subdomains"]
+
+    A --> |-r|L[Target IP]
+    L --> M[Reverse DNS lookup]
+    
+    B --> |-t| N[zonewalk]
+    N --> O[Zone Walking]
+    
+    B --> |-t| P[rvl]
+    P --> Q[Reverse lookup of a given CIDR]
+    
+    B --> |-t| S[srv]
+    S --> T[SRV records]
+
+    B --> |-t| U[goo]
+    U --> V[Google search for subdomains]
+
+    A --> |-n| AA[NS_SERVER]
+    AA --> AB[Domain server to use. If none is given, the SOA of the target will be used]
+
+    A --> |-D| BB[DICTIONARY]
+    BB --> BC[Brute force domain lookup]
 ```
