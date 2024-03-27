@@ -18,6 +18,10 @@ This script provides the ability to perform:
 DNSRecon requires python3.6+
 
 # Flow Chart
+![Flow Chart](DNSRECON.JPG)
+
+# Use Mermaid tool to draw Chart
+
 ```mermaid
 graph TD;
     A[dnsrecon.py] -->|-d| B[Target Domain]
